@@ -17,6 +17,7 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
+    auth()->logout();
     return view('welcome');
 });
 
@@ -35,6 +36,8 @@ Route::get('/oauth', [AccountController::class,'Oauth'])->name('oauthCallback')-
 
 
 Route::group(['prefix' => 'Eventos'], function () {
+
+    Route::get('/Listevent',[EventController::class,'Listevent'])->name('Listevent')->middleware('auth');
 
     Route::get('/Cargareventos',[EventController::class,'Cargarevento'])->name('Cargareventos')->middleware('auth');
 

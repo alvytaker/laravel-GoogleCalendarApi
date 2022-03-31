@@ -147,7 +147,7 @@ function lista(){
 
         for (var i=0; i<arreglo.length; i++) {
        todo = '<tr><td>'+arreglo[i].id+'</td>';
-       todo+='<td>'+arreglo[i].event+'</td>';
+       todo+='<td>'+arreglo[i].summary+'</td>';
        todo+='<td>'+arreglo[i].start+'</td>';
        todo+='<td>'+arreglo[i].end+'</td></tr>';
 

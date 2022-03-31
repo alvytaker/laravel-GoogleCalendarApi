@@ -24,13 +24,8 @@ class AccountController extends Controller
     {
         session_start();
         if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-            $this->client->setAccessToken($_SESSION['access_token']);
-            $service = new Google_Service_Calendar($this->client);
-
-            $calendarId = 'primary';
-            $events = $service->events->listEvents($calendarId);
            
-            return view('ListCalendar',compact('events'));
+            return redirect()->route('Listevent');
         
         }else{
 

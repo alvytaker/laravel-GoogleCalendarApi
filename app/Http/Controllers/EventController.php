@@ -27,6 +27,20 @@ class EventController extends Controller
     }
 
 
+    public function Listevent(){
+
+        session_start();
+
+        $this->client->setAccessToken($_SESSION['access_token']);
+            $service = new Google_Service_Calendar($this->client);
+
+            $calendarId = 'primary';
+            $events = $service->events->listEvents($calendarId);
+           
+            return view('ListCalendar',compact('events'));
+            
+    }
+
 
     public function Store(Request $request)
     {
@@ -141,7 +155,7 @@ class EventController extends Controller
 
             $updatedEvent = $service->events->update('primary', $event->getId(), $event);
 
-            EventCalendar::Eventcreated($eventId,$request->title, $request->description, $startDateTime, $endDateTime, $event->getCreated());
+            EventCalendar::Eventedit($eventId,$request->title, $request->description, $startDateTime, $endDateTime, $event->getCreated());
 
 
             if(!$updatedEvent){
