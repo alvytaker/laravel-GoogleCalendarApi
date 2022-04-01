@@ -46,7 +46,8 @@ $ php artisan serve
 
 Accedemos a la plataforma en el navegador, visualizaremos la página de laravel y hora nos vamos a la esquina superior derecha e ingresamos. procedemos a crear un usuario para poder ingresar.
 
-Una vez creado el usuario, nos pedirá ingresar con una cuenta, la cuenta con la cual ingresaremos al sistema deberá estar registrada como cuenta de prueba, puesto que al ser un proyecto en desarrollo, no cuenta con acceso libre.
+Una vez creado el usuario, nos pedirá ingresar con una cuenta.
+La cuenta con la cual ingresaremos al sistema deberá estar registrada como cuenta de prueba, puesto que al ser un proyecto en desarrollo, no cuenta con acceso libre.
 
 ## Migración de eventos desde google calendar a base de datos
 
